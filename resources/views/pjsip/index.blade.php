@@ -37,6 +37,7 @@
                         <td>{{ $user->position }}</td>
                         <td>
                             <a href="{{ route('pjsip.edit', $user->extension) }}" class="btn btn-warning btn-sm">編集</a>
+                            <a href="{{ route('pjsip.call', $user->extension) }}" class="btn btn-success btn-sm">通話</a>
                         </td>
                     </tr>
                 @endforeach
