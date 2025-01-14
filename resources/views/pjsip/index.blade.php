@@ -7,6 +7,7 @@
 <body>
     <div class="container mt-4">
         <h1>内線一覧</h1>
+        <a href="{{ route('pjsip.test') }}" class="btn btn-success mt-2">WebSocket接続確認</a>
         <!-- 成功メッセージ表示 -->
         @if (session('success'))
             <div id="successMessage" class="alert alert-success">
@@ -14,7 +15,7 @@
             </div>
         @endif
         <!-- 検索フォーム -->
-        <form action="{{ route('pjsip.index') }}" method="GET" class="mb-3">
+        <form action="{{ route('pjsip.index') }}" method="GET" class="mb-3  mt-2">
             <input type="text" name="search" class="form-control" placeholder="内線番号、名前、部署、役職で検索">
             <button type="submit" class="btn btn-primary mt-2">検索</button>
         </form>
@@ -37,7 +38,6 @@
                         <td>{{ $user->position }}</td>
                         <td>
                             <a href="{{ route('pjsip.edit', $user->extension) }}" class="btn btn-warning btn-sm">編集</a>
-                            <a href="{{ route('pjsip.call', $user->extension) }}" class="btn btn-success btn-sm">通話</a>
                         </td>
                     </tr>
                 @endforeach

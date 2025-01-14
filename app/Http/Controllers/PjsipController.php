@@ -193,9 +193,8 @@ class PjsipController extends Controller
             ->with('success', "内線番号 {$id} の情報を削除しました");
     }
 
-    public function call($id)
+    public function test()
     {
-        $user = \DB::table('users')->where('extension', $id)->first();
-        return view('pjsip.call', compact('user'));
+        return view('pjsip.test');
     }
 }

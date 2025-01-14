@@ -1,1 +1,2 @@
-import './bootstrap';
+import JsSIP from 'jssip';
+window.JsSIP = JsSIP;
