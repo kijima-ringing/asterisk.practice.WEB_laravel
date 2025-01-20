@@ -15,3 +15,4 @@ Route::get('/pjsip/{id}/edit', [PjsipController::class, 'edit'])->name('pjsip.ed
 Route::put('/pjsip/{id}', [PjsipController::class, 'update'])->name('pjsip.update');
 Route::delete('/pjsip/{id}', [PjsipController::class, 'destroy'])->name('pjsip.destroy');
 Route::get('/pjsip/test', [PjsipController::class, 'test'])->name('pjsip.test');
+Route::get('/pjsip/call', [PjsipController::class, 'call'])->name('pjsip.call');

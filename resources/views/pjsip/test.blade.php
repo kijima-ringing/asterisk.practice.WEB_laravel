@@ -8,10 +8,11 @@
 <body>
   <h1>JsSIP WebSocket Test</h1>
   <div id="status"></div>
+  <a href="{{ route('pjsip.index') }}" class="btn btn-secondary">戻る</a>
 
   <script>
     // JsSIPを初期化
-    const socket = new JsSIP.WebSocketInterface('wss://asterisk-dev-kijima.ringing.co.jp:8089/ws');
+    const socket = new JsSIP.WebSocketInterface('ws://asterisk-dev-kijima.ringing.co.jp:8088/ws');
     const configuration = {
       sockets: [socket],
       uri: 'sip:6000@asterisk-dev-kijima.ringing.co.jp', // 例：6000はSIPエンドポイント

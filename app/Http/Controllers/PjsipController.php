@@ -197,4 +197,9 @@ class PjsipController extends Controller
     {
         return view('pjsip.test');
     }
+
+    public function call()
+    {
+        return view('pjsip.call');
+    }
 }

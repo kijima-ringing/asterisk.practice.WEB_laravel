@@ -8,6 +8,7 @@
     <div class="container mt-4">
         <h1>内線一覧</h1>
         <a href="{{ route('pjsip.test') }}" class="btn btn-success mt-2">WebSocket接続確認</a>
+        <a href="{{ route('pjsip.call') }}" class="btn btn-secondary mt-2">通話画面へ</a>
         <!-- 成功メッセージ表示 -->
         @if (session('success'))
             <div id="successMessage" class="alert alert-success">
