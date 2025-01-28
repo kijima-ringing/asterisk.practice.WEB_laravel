@@ -37,21 +37,25 @@
     const realm = 'asterisk-dev-kijima.ringing.co.jp';
     const password = 'your_password';
     
+    // JsSIPのデバッグレベルを設定
+    JsSIP.debug.enable('JsSIP:*');  // すべてのデバッグ情報を有効化
+
     const configuration = {
       sockets: [socket],
       uri: `sip:${username}@${realm}`,
       password: password,
       realm: realm,
       authorization_user: username,
+      register: true,
       register_expires: 30,
-      connection_recovery_min_interval: 1,
-      connection_recovery_max_interval: 15,
+      connection_recovery_min_interval: 2,
+      connection_recovery_max_interval: 30,
       no_answer_timeout: 60,
-      use_preloaded_route: true,
-      session_timers: false,  // セッションタイマーを無効化
+      use_preloaded_route: false,
+      session_timers: false,
       pcConfig: {
         iceServers: [
-          { urls: ['stun:stun.l.google.com:19302'] }
+          { urls: ['stun:stun.ideasip.com:3478'] }
         ]
       },
       mediaConstraints: {
@@ -66,31 +70,25 @@
     // RTCSessionの設定を最適化
     const callOptions = {
       mediaConstraints: {
-        audio: {
-          echoCancellation: { ideal: true },
-          noiseSuppression: { ideal: true },
-          autoGainControl: { ideal: true },
-          latency: { ideal: 0.01 }
-        },
+        audio: true,
         video: false
       },
       pcConfig: {
         iceServers: [
-          { urls: ['stun:stun.l.google.com:19302'] }
+          { urls: ['stun:stun.ideasip.com:3478'] }
         ],
+        iceTransportPolicy: 'all',
         bundlePolicy: 'max-bundle',
         rtcpMuxPolicy: 'require',
-        iceTransportPolicy: 'all',
-        iceCandidatePoolSize: 1
+        iceCandidatePoolSize: 0
       },
       rtcOfferConstraints: {
         offerToReceiveAudio: true,
-        offerToReceiveVideo: false,
-        iceRestart: false,
-        voiceActivityDetection: false
+        offerToReceiveVideo: false
       },
-      sessionTimerExpires: 90,
-      iceGatheringTimeout: 2000
+      sessionTimersEnabled: false,
+      iceCheckingTimeout: 1000,
+      iceGatheringTimeout: 1000
     };
 
     // メディアストリームを事前に取得
@@ -121,9 +119,6 @@
     // UAの初期化
     ua = new JsSIP.UA(configuration);
 
-    // デバッグログの有効化
-    JsSIP.debug.enable('JsSIP:*');
-
     // 詳細なイベントログ
     ua.on('connecting', () => {
       console.log('WebSocket接続中...');
@@ -150,6 +145,8 @@
 
     ua.on('registrationFailed', (e) => {
       console.error('SIP登録失敗:', e);
+      console.error('Response:', e.response);
+      console.error('Cause:', e.cause);
     });
 
     ua.on('newRTCSession', (data) => {
@@ -240,6 +237,23 @@
         updateStatus('通話失敗: ' + e.cause);
         resetCallState();
       });
+
+      // ICE接続状態の監視を追加
+      session.connection.addEventListener('iceconnectionstatechange', () => {
+        console.log('ICE接続状態:', session.connection.iceConnectionState);
+      });
+
+      // ICE収集状態の監視を追加
+      session.connection.addEventListener('icegatheringstatechange', () => {
+        console.log('ICE収集状態:', session.connection.iceGatheringState);
+      });
+
+      // 個々のICE候補の監視を追加
+      session.connection.addEventListener('icecandidate', (event) => {
+        if (event.candidate) {
+          console.log('新しいICE候補:', event.candidate.candidate);
+        }
+      });
     }
 
     // ステータス更新関数
@@ -275,6 +289,7 @@
       },
       pcConfig: {
         iceServers: [
+          { urls: ['stun:stun.ideasip.com:3478'] },
           { urls: ['stun:stun.l.google.com:19302'] }
         ]
       },

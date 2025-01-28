@@ -1,0 +1,398 @@
+JsSIP:WebSocketInterface new() [url:"ws://asterisk-dev-kijima.ringing.co.jp:8088/ws"] +0ms
+jssip.min.js:9 JsSIP:UA new() [configuration:{sockets: Array(1), uri: 'sip:6000@asterisk-dev-kijima.ringing.co.jp', password: 'your_password', realm: 'asterisk-dev-kijima.ringing.co.jp', authorization_user: '6000', …}] +0ms
+jssip.min.js:9 JsSIP:Transport new() +0ms
+jssip.min.js:9 JsSIP:UA configuration parameters after validation: +2ms
+jssip.min.js:9 JsSIP:UA - authorization_user: "6000" +0ms
+jssip.min.js:9 JsSIP:UA - password: NOT SHOWN +0ms
+jssip.min.js:9 JsSIP:UA - realm: "asterisk-dev-kijima.ringing.co.jp" +0ms
+jssip.min.js:9 JsSIP:UA - ha1: NOT SHOWN +0ms
+jssip.min.js:9 JsSIP:UA - display_name: null +0ms
+jssip.min.js:9 JsSIP:UA - uri: sip:6000@asterisk-dev-kijima.ringing.co.jp +0ms
+jssip.min.js:9 JsSIP:UA - contact_uri: {"_parameters":{"transport":"ws"},"_headers":{},"_scheme":"sip","_user":"rt8d5398","_host":"1jp44qud2f9r.invalid","_port":null} +0ms
+jssip.min.js:9 JsSIP:UA - instance_id: "06d5acf2-f7f9-4f5f-b64d-8da9f32b098d" +0ms
+jssip.min.js:9 JsSIP:UA - use_preloaded_route: false +1ms
+jssip.min.js:9 JsSIP:UA - session_timers: false +0ms
+jssip.min.js:9 JsSIP:UA - session_timers_refresh_method: "UPDATE" +0ms
+jssip.min.js:9 JsSIP:UA - no_answer_timeout: 60000 +0ms
+jssip.min.js:9 JsSIP:UA - register: true +0ms
+jssip.min.js:9 JsSIP:UA - register_expires: 30 +0ms
+jssip.min.js:9 JsSIP:UA - registrar_server: sip:asterisk-dev-kijima.ringing.co.jp +0ms
+jssip.min.js:9 JsSIP:UA - connection_recovery_max_interval: 30 +0ms
+jssip.min.js:9 JsSIP:UA - connection_recovery_min_interval: 2 +0ms
+jssip.min.js:9 JsSIP:UA - via_host: "1jp44qud2f9r.invalid" +0ms
+jssip.min.js:9 JsSIP:UA start() +0ms
+jssip.min.js:9 JsSIP:Transport connect() +3ms
+call:124 WebSocket接続中...
+jssip.min.js:9 JsSIP:WebSocketInterface connect() +5ms
+jssip.min.js:9 JsSIP:WebSocketInterface connecting to WebSocket ws://asterisk-dev-kijima.ringing.co.jp:8088/ws +0ms
+jssip.min.js:9 JsSIP:WebSocketInterface WebSocket ws://asterisk-dev-kijima.ringing.co.jp:8088/ws connected +95ms
+call:128 WebSocket接続成功
+jssip.min.js:9 JsSIP:Transport send() +96ms
+jssip.min.js:9 JsSIP:Transport sending message:REGISTER sip:asterisk-dev-kijima.ringing.co.jp SIP/2.0
+Via: SIP/2.0/WS 1jp44qud2f9r.invalid;branch=z9hG4bK5553498
+Max-Forwards: 69
+To: <sip:6000@asterisk-dev-kijima.ringing.co.jp>
+From: <sip:6000@asterisk-dev-kijima.ringing.co.jp>;tag=nv53rr39no
+Call-ID: 2baoceep828su9ddnvvcr6
+CSeq: 1 REGISTER
+Contact: <sip:rt8d5398@1jp44qud2f9r.invalid;transport=ws>;+sip.ice;reg-id=1;+sip.instance="<urn:uuid:06d5acf2-f7f9-4f5f-b64d-8da9f32b098d>";expires=30
+Expires: 30
+Allow: INVITE,ACK,CANCEL,BYE,UPDATE,MESSAGE,OPTIONS,REFER,INFO
+Supported: path,gruu,outbound
+User-Agent: JsSIP 3.1.2
+Content-Length: 0
+
+ +0ms
+jssip.min.js:9 JsSIP:WebSocketInterface send() +1ms
+jssip.min.js:9 JsSIP:WebSocketInterface received WebSocket message +27ms
+jssip.min.js:9 JsSIP:Transport received text message:SIP/2.0 401 Unauthorized
+Via: SIP/2.0/WS 1jp44qud2f9r.invalid;rport=60184;received=116.58.162.125;branch=z9hG4bK5553498
+Call-ID: 2baoceep828su9ddnvvcr6
+From: <sip:6000@asterisk-dev-kijima.ringing.co.jp>;tag=nv53rr39no
+To: <sip:6000@asterisk-dev-kijima.ringing.co.jp>;tag=z9hG4bK5553498
+CSeq: 1 REGISTER
+WWW-Authenticate: Digest realm="asterisk",nonce="1738048968/8115e901baf5700632942bd8256d74a6",opaque="416740313336c7b5",algorithm=MD5,qop="auth"
+Server: Asterisk PBX 20.6.0~dfsg+~cs6.13.40431414-2build5
+Content-Length:  0
+
+ +27ms
+jssip.min.js:9 JsSIP:DigestAuthentication authenticate() | response generated +0ms
+jssip.min.js:9 JsSIP:Transport send() +3ms
+jssip.min.js:9 JsSIP:Transport sending message:REGISTER sip:asterisk-dev-kijima.ringing.co.jp SIP/2.0
+Via: SIP/2.0/WS 1jp44qud2f9r.invalid;branch=z9hG4bK2426886
+Max-Forwards: 69
+To: <sip:6000@asterisk-dev-kijima.ringing.co.jp>
+From: <sip:6000@asterisk-dev-kijima.ringing.co.jp>;tag=nv53rr39no
+Call-ID: 2baoceep828su9ddnvvcr6
+CSeq: 2 REGISTER
+Authorization: Digest algorithm=MD5, username="6000", realm="asterisk", nonce="1738048968/8115e901baf5700632942bd8256d74a6", uri="sip:asterisk-dev-kijima.ringing.co.jp", response="d58dc377b1f6a458d4ccc58a23fe0e98", opaque="416740313336c7b5", qop=auth, cnonce="fbc3l2617e6g", nc=00000001
+Contact: <sip:rt8d5398@1jp44qud2f9r.invalid;transport=ws>;+sip.ice;reg-id=1;+sip.instance="<urn:uuid:06d5acf2-f7f9-4f5f-b64d-8da9f32b098d>";expires=30
+Expires: 30
+Allow: INVITE,ACK,CANCEL,BYE,UPDATE,MESSAGE,OPTIONS,REFER,INFO
+Supported: path,gruu,outbound
+User-Agent: JsSIP 3.1.2
+Content-Length: 0
+
+ +1ms
+jssip.min.js:9 JsSIP:WebSocketInterface send() +4ms
+jssip.min.js:9 JsSIP:WebSocketInterface received WebSocket message +32ms
+jssip.min.js:9 JsSIP:Transport received text message:SIP/2.0 200 OK
+Via: SIP/2.0/WS 1jp44qud2f9r.invalid;rport=60184;received=116.58.162.125;branch=z9hG4bK2426886
+Call-ID: 2baoceep828su9ddnvvcr6
+From: <sip:6000@asterisk-dev-kijima.ringing.co.jp>;tag=nv53rr39no
+To: <sip:6000@asterisk-dev-kijima.ringing.co.jp>;tag=z9hG4bK2426886
+CSeq: 2 REGISTER
+Date: Tue, 28 Jan 2025 07:22:48 GMT
+Contact: <sip:rt8d5398@1jp44qud2f9r.invalid;transport=ws>;expires=59
+Expires: 60
+Server: Asterisk PBX 20.6.0~dfsg+~cs6.13.40431414-2build5
+Content-Length:  0
+
+ +33ms
+call:139 SIP登録成功
+jssip.min.js:9 JsSIP:UA call() +6s
+jssip.min.js:9 JsSIP:RTCSession new +0ms
+jssip.min.js:9 JsSIP:RTCSession connect() +0ms
+jssip.min.js:9 JsSIP:RTCSession emit "peerconnection" +4ms
+jssip.min.js:9 JsSIP:RTCSession newRTCSession() +0ms
+jssip.min.js:9 JsSIP:RTCSession session connecting +7ms
+jssip.min.js:9 JsSIP:RTCSession emit "connecting" +1ms
+jssip.min.js:9 JsSIP:RTCSession createLocalDescription() +0ms
+call:248 ICE収集状態: gathering
+call:254 新しいICE候補: candidate:1837436244 1 udp 2122260223 192.168.100.10 63401 typ host generation 0 ufrag VW+T network-id 3 network-cost 50
+call:254 新しいICE候補: candidate:2410564276 1 udp 2122194687 172.24.128.1 63402 typ host generation 0 ufrag VW+T network-id 1
+call:254 新しいICE候補: candidate:3651812346 1 udp 2122129151 192.168.0.47 63403 typ host generation 0 ufrag VW+T network-id 2 network-cost 10
+call:254 新しいICE候補: candidate:2469386688 1 tcp 1518280447 192.168.100.10 9 typ host tcptype active generation 0 ufrag VW+T network-id 3 network-cost 50
+call:254 新しいICE候補: candidate:1896128032 1 tcp 1518214911 172.24.128.1 9 typ host tcptype active generation 0 ufrag VW+T network-id 1
+call:254 新しいICE候補: candidate:654372718 1 tcp 1518149375 192.168.0.47 9 typ host tcptype active generation 0 ufrag VW+T network-id 2 network-cost 10
+call:248 ICE収集状態: complete
+jssip.min.js:9 JsSIP:RTCSession emit "sdp" +145ms
+jssip.min.js:9 JsSIP:RTCSession emit "sending" [request:t {ua: t, headers: {…}, method: 'INVITE', ruri: e, body: 'v=0\r\no=- 2078614935647813809 2 IN IP4 127.0.0.1\r\ns…ca95dc5fda ddd101d6-bb39-4dde-97d4-e7542183df51\r\n', …}] +1ms
+jssip.min.js:9 JsSIP:Transport send() +6s
+jssip.min.js:9 JsSIP:Transport sending message:INVITE sip:6002@asterisk-dev-kijima.ringing.co.jp SIP/2.0
+Via: SIP/2.0/WS 1jp44qud2f9r.invalid;branch=z9hG4bK9691146
+Max-Forwards: 69
+To: <sip:6002@asterisk-dev-kijima.ringing.co.jp>
+From: <sip:6000@asterisk-dev-kijima.ringing.co.jp>;tag=rgdrhc660g
+Call-ID: e3bmj90j4kituvtul3l6
+CSeq: 8796 INVITE
+Contact: <sip:rt8d5398@1jp44qud2f9r.invalid;transport=ws;ob>
+Content-Type: application/sdp
+Allow: INVITE,ACK,CANCEL,BYE,UPDATE,MESSAGE,OPTIONS,REFER,INFO
+Supported: ice,replaces,outbound
+User-Agent: JsSIP 3.1.2
+Content-Length: 1976
+
+v=0
+o=- 2078614935647813809 2 IN IP4 127.0.0.1
+s=-
+t=0 0
+a=group:BUNDLE 0
+a=extmap-allow-mixed
+a=msid-semantic: WMS 557c80b9-2f55-4088-8c26-b1ca95dc5fda
+m=audio 63401 UDP/TLS/RTP/SAVPF 111 63 9 0 8 13 110 126
+c=IN IP4 192.168.100.10
+a=rtcp:9 IN IP4 0.0.0.0
+a=candidate:1837436244 1 udp 2122260223 192.168.100.10 63401 typ host generation 0 network-id 3 network-cost 50
+a=candidate:2410564276 1 udp 2122194687 172.24.128.1 63402 typ host generation 0 network-id 1
+a=candidate:3651812346 1 udp 2122129151 192.168.0.47 63403 typ host generation 0 network-id 2 network-cost 10
+a=candidate:2469386688 1 tcp 1518280447 192.168.100.10 9 typ host tcptype active generation 0 network-id 3 network-cost 50
+a=candidate:1896128032 1 tcp 1518214911 172.24.128.1 9 typ host tcptype active generation 0 network-id 1
+a=candidate:654372718 1 tcp 1518149375 192.168.0.47 9 typ host tcptype active generation 0 network-id 2 network-cost 10
+a=ice-ufrag:VW+T
+a=ice-pwd:sXzEI9nCIlPjlma8cwl7Pxqi
+a=ice-options:trickle
+a=fingerprint:sha-256 CC:0D:42:AE:C7:07:C8:A0:AB:8C:DE:80:DD:39:51:1D:3A:49:5D:21:ED:7B:1C:DB:F1:31:1A:8D:29:6A:8A:75
+a=setup:actpass
+a=mid:0
+a=extmap:1 urn:ietf:params:rtp-hdrext:ssrc-audio-level
+a=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time
+a=extmap:3 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01
+a=extmap:4 urn:ietf:params:rtp-hdrext:sdes:mid
+a=sendrecv
+a=msid:557c80b9-2f55-4088-8c26-b1ca95dc5fda ddd101d6-bb39-4dde-97d4-e7542183df51
+a=rtcp-mux
+a=rtcp-rsize
+a=rtpmap:111 opus/48000/2
+a=rtcp-fb:111 transport-cc
+a=fmtp:111 minptime=10;useinbandfec=1
+a=rtpmap:63 red/48000/2
+a=fmtp:63 111/111
+a=rtpmap:9 G722/8000
+a=rtpmap:0 PCMU/8000
+a=rtpmap:8 PCMA/8000
+a=rtpmap:13 CN/8000
+a=rtpmap:110 telephone-event/48000
+a=rtpmap:126 telephone-event/8000
+a=ssrc:3686925934 cname:0qo8EnZkwwESg51c
+a=ssrc:3686925934 msid:557c80b9-2f55-4088-8c26-b1ca95dc5fda ddd101d6-bb39-4dde-97d4-e7542183df51
+ +0ms
+jssip.min.js:9 JsSIP:WebSocketInterface send() +6s
+jssip.min.js:9 JsSIP:WebSocketInterface received WebSocket message +65ms
+jssip.min.js:9 JsSIP:Transport received text message:SIP/2.0 401 Unauthorized
+Via: SIP/2.0/WS 1jp44qud2f9r.invalid;rport=60184;received=116.58.162.125;branch=z9hG4bK9691146
+Call-ID: e3bmj90j4kituvtul3l6
+From: <sip:6000@asterisk-dev-kijima.ringing.co.jp>;tag=rgdrhc660g
+To: <sip:6002@asterisk-dev-kijima.ringing.co.jp>;tag=z9hG4bK9691146
+CSeq: 8796 INVITE
+WWW-Authenticate: Digest realm="asterisk",nonce="1738048975/c38795a8d677f39c920f25c45b3213ad",opaque="1520b5ab21d6ede2",algorithm=MD5,qop="auth"
+Server: Asterisk PBX 20.6.0~dfsg+~cs6.13.40431414-2build5
+Content-Length:  0
+
+ +65ms
+jssip.min.js:9 JsSIP:Transport send() +2ms
+jssip.min.js:9 JsSIP:Transport sending message:ACK sip:6002@asterisk-dev-kijima.ringing.co.jp SIP/2.0
+Via: SIP/2.0/WS 1jp44qud2f9r.invalid;branch=z9hG4bK9691146
+Max-Forwards: 69
+To: <sip:6002@asterisk-dev-kijima.ringing.co.jp>;tag=z9hG4bK9691146
+From: <sip:6000@asterisk-dev-kijima.ringing.co.jp>;tag=rgdrhc660g
+Call-ID: e3bmj90j4kituvtul3l6
+CSeq: 8796 ACK
+Allow: INVITE,ACK,CANCEL,BYE,UPDATE,MESSAGE,OPTIONS,REFER,INFO
+Supported: outbound
+User-Agent: JsSIP 3.1.2
+Content-Length: 0
+
+ +0ms
+jssip.min.js:9 JsSIP:WebSocketInterface send() +2ms
+jssip.min.js:9 JsSIP:DigestAuthentication authenticate() | response generated +6s
+jssip.min.js:9 JsSIP:Transport send() +1ms
+jssip.min.js:9 JsSIP:Transport sending message:INVITE sip:6002@asterisk-dev-kijima.ringing.co.jp SIP/2.0
+Via: SIP/2.0/WS 1jp44qud2f9r.invalid;branch=z9hG4bK3954248
+Max-Forwards: 69
+To: <sip:6002@asterisk-dev-kijima.ringing.co.jp>
+From: <sip:6000@asterisk-dev-kijima.ringing.co.jp>;tag=rgdrhc660g
+Call-ID: e3bmj90j4kituvtul3l6
+CSeq: 8797 INVITE
+Authorization: Digest algorithm=MD5, username="6000", realm="asterisk", nonce="1738048975/c38795a8d677f39c920f25c45b3213ad", uri="sip:6002@asterisk-dev-kijima.ringing.co.jp", response="525915399003aba5d67f712485a3533e", opaque="1520b5ab21d6ede2", qop=auth, cnonce="7fd4eta0n1nt", nc=00000001
+Contact: <sip:rt8d5398@1jp44qud2f9r.invalid;transport=ws;ob>
+Content-Type: application/sdp
+Allow: INVITE,ACK,CANCEL,BYE,UPDATE,MESSAGE,OPTIONS,REFER,INFO
+Supported: ice,replaces,outbound
+User-Agent: JsSIP 3.1.2
+Content-Length: 1976
+
+v=0
+o=- 2078614935647813809 2 IN IP4 127.0.0.1
+s=-
+t=0 0
+a=group:BUNDLE 0
+a=extmap-allow-mixed
+a=msid-semantic: WMS 557c80b9-2f55-4088-8c26-b1ca95dc5fda
+m=audio 63401 UDP/TLS/RTP/SAVPF 111 63 9 0 8 13 110 126
+c=IN IP4 192.168.100.10
+a=rtcp:9 IN IP4 0.0.0.0
+a=candidate:1837436244 1 udp 2122260223 192.168.100.10 63401 typ host generation 0 network-id 3 network-cost 50
+a=candidate:2410564276 1 udp 2122194687 172.24.128.1 63402 typ host generation 0 network-id 1
+a=candidate:3651812346 1 udp 2122129151 192.168.0.47 63403 typ host generation 0 network-id 2 network-cost 10
+a=candidate:2469386688 1 tcp 1518280447 192.168.100.10 9 typ host tcptype active generation 0 network-id 3 network-cost 50
+a=candidate:1896128032 1 tcp 1518214911 172.24.128.1 9 typ host tcptype active generation 0 network-id 1
+a=candidate:654372718 1 tcp 1518149375 192.168.0.47 9 typ host tcptype active generation 0 network-id 2 network-cost 10
+a=ice-ufrag:VW+T
+a=ice-pwd:sXzEI9nCIlPjlma8cwl7Pxqi
+a=ice-options:trickle
+a=fingerprint:sha-256 CC:0D:42:AE:C7:07:C8:A0:AB:8C:DE:80:DD:39:51:1D:3A:49:5D:21:ED:7B:1C:DB:F1:31:1A:8D:29:6A:8A:75
+a=setup:actpass
+a=mid:0
+a=extmap:1 urn:ietf:params:rtp-hdrext:ssrc-audio-level
+a=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time
+a=extmap:3 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01
+a=extmap:4 urn:ietf:params:rtp-hdrext:sdes:mid
+a=sendrecv
+a=msid:557c80b9-2f55-4088-8c26-b1ca95dc5fda ddd101d6-bb39-4dde-97d4-e7542183df51
+a=rtcp-mux
+a=rtcp-rsize
+a=rtpmap:111 opus/48000/2
+a=rtcp-fb:111 transport-cc
+a=fmtp:111 minptime=10;useinbandfec=1
+a=rtpmap:63 red/48000/2
+a=fmtp:63 111/111
+a=rtpmap:9 G722/8000
+a=rtpmap:0 PCMU/8000
+a=rtpmap:8 PCMA/8000
+a=rtpmap:13 CN/8000
+a=rtpmap:110 telephone-event/48000
+a=rtpmap:126 telephone-event/8000
+a=ssrc:3686925934 cname:0qo8EnZkwwESg51c
+a=ssrc:3686925934 msid:557c80b9-2f55-4088-8c26-b1ca95dc5fda ddd101d6-bb39-4dde-97d4-e7542183df51
+ +1ms
+jssip.min.js:9 JsSIP:WebSocketInterface send() +2ms
+jssip.min.js:9 JsSIP:InviteClientTransaction Timer D expired for transaction z9hG4bK9691146 +0ms
+jssip.min.js:9 JsSIP:WebSocketInterface received WebSocket message +25ms
+jssip.min.js:9 JsSIP:Transport received text message:SIP/2.0 100 Trying
+Via: SIP/2.0/WS 1jp44qud2f9r.invalid;rport=60184;received=116.58.162.125;branch=z9hG4bK3954248
+Call-ID: e3bmj90j4kituvtul3l6
+From: <sip:6000@asterisk-dev-kijima.ringing.co.jp>;tag=rgdrhc660g
+To: <sip:6002@asterisk-dev-kijima.ringing.co.jp>
+CSeq: 8797 INVITE
+Server: Asterisk PBX 20.6.0~dfsg+~cs6.13.40431414-2build5
+Content-Length:  0
+
+ +25ms
+jssip.min.js:9 JsSIP:RTCSession receiveInviteResponse() +97ms
+jssip.min.js:9 JsSIP:WebSocketInterface received WebSocket message +1s
+jssip.min.js:9 JsSIP:Transport received text message:SIP/2.0 180 Ringing
+Via: SIP/2.0/WS 1jp44qud2f9r.invalid;rport=60184;received=116.58.162.125;branch=z9hG4bK3954248
+Call-ID: e3bmj90j4kituvtul3l6
+From: <sip:6000@asterisk-dev-kijima.ringing.co.jp>;tag=rgdrhc660g
+To: <sip:6002@asterisk-dev-kijima.ringing.co.jp>;tag=bc3a2c32-af5a-4827-8554-7f7f21131a78
+CSeq: 8797 INVITE
+Server: Asterisk PBX 20.6.0~dfsg+~cs6.13.40431414-2build5
+Contact: <sip:160.16.73.142:8088;transport=ws>
+Allow: OPTIONS, REGISTER, SUBSCRIBE, NOTIFY, PUBLISH, INVITE, ACK, BYE, CANCEL, UPDATE, PRACK, INFO, MESSAGE, REFER
+Content-Length:  0
+
+ +1s
+jssip.min.js:9 JsSIP:RTCSession receiveInviteResponse() +1s
+jssip.min.js:9 JsSIP:Dialog new UAC dialog created with status EARLY +0ms
+jssip.min.js:9 JsSIP:RTCSession session progress +1ms
+jssip.min.js:9 JsSIP:RTCSession emit "progress" +0ms
+jssip.min.js:9 JsSIP:WebSocketInterface received WebSocket message +2s
+jssip.min.js:9 JsSIP:Transport received text message:SIP/2.0 200 OK
+Via: SIP/2.0/WS 1jp44qud2f9r.invalid;rport=60184;received=116.58.162.125;branch=z9hG4bK3954248
+Call-ID: e3bmj90j4kituvtul3l6
+From: <sip:6000@asterisk-dev-kijima.ringing.co.jp>;tag=rgdrhc660g
+To: <sip:6002@asterisk-dev-kijima.ringing.co.jp>;tag=bc3a2c32-af5a-4827-8554-7f7f21131a78
+CSeq: 8797 INVITE
+Server: Asterisk PBX 20.6.0~dfsg+~cs6.13.40431414-2build5
+Allow: OPTIONS, REGISTER, SUBSCRIBE, NOTIFY, PUBLISH, INVITE, ACK, BYE, CANCEL, UPDATE, PRACK, INFO, MESSAGE, REFER
+Contact: <sip:160.16.73.142:8088;transport=ws>
+Supported: 100rel, timer, replaces, norefersub
+Content-Type: application/sdp
+Content-Length:   838
+
+v=0
+o=- 1612447921 4 IN IP4 160.16.73.142
+s=Asterisk
+c=IN IP4 160.16.73.142
+t=0 0
+a=msid-semantic:WMS *
+a=group:BUNDLE 0
+m=audio 20570 UDP/TLS/RTP/SAVPF 111 0 8 126
+a=connection:new
+a=setup:active
+a=fingerprint:SHA-256 E2:46:42:E1:F3:67:46:5F:6C:9D:35:7C:B6:78:27:BF:C2:AB:09:05:0C:01:6B:22:87:59:58:81:D3:D6:95:50
+a=ice-ufrag:041476c20e6c24553337e6845008600f
+a=ice-pwd:3b98f091279e51f86b58583f56b106a4
+a=candidate:Ha010498e 1 UDP 2130706431 160.16.73.142 20570 typ host
+a=rtpmap:111 opus/48000/2
+a=rtpmap:0 PCMU/8000
+a=rtpmap:8 PCMA/8000
+a=rtpmap:126 telephone-event/8000
+a=fmtp:126 0-16
+a=ptime:20
+a=maxptime:60
+a=sendrecv
+a=rtcp-mux
+a=ssrc:1364122653 cname:1d498571-6069-46a8-b360-f791609001d3
+a=msid:aef3e82f-3745-4a9e-bf90-4af436a22bf1 de042398-08dc-4901-8b97-f8e886d8ef76
+a=rtcp-fb:* transport-cc
+a=mid:0
+ +2s
+jssip.min.js:9 JsSIP:RTCSession receiveInviteResponse() +2s
+jssip.min.js:9 JsSIP:Dialog dialog e3bmj90j4kituvtul3l6rgdrhc660gbc3a2c32-af5a-4827-8554-7f7f21131a78  changed to CONFIRMED state +2s
+jssip.min.js:9 JsSIP:RTCSession emit "sdp" +1ms
+call:243 ICE接続状態: checking
+jssip.min.js:9 JsSIP:RTCSession session accepted +3ms
+jssip.min.js:9 JsSIP:RTCSession emit "accepted" +1ms
+jssip.min.js:9 JsSIP:RTCSession sendRequest() +1ms
+jssip.min.js:9 JsSIP:Transport send() +8ms
+jssip.min.js:9 JsSIP:Transport sending message:ACK sip:160.16.73.142:8088;transport=ws SIP/2.0
+Via: SIP/2.0/WS 1jp44qud2f9r.invalid;branch=z9hG4bK1442284
+Max-Forwards: 69
+To: <sip:6002@asterisk-dev-kijima.ringing.co.jp>;tag=bc3a2c32-af5a-4827-8554-7f7f21131a78
+From: <sip:6000@asterisk-dev-kijima.ringing.co.jp>;tag=rgdrhc660g
+Call-ID: e3bmj90j4kituvtul3l6
+CSeq: 8797 ACK
+Allow: INVITE,ACK,CANCEL,BYE,UPDATE,MESSAGE,OPTIONS,REFER,INFO
+Supported: outbound
+User-Agent: JsSIP 3.1.2
+Content-Length: 0
+
+ +1ms
+jssip.min.js:9 JsSIP:WebSocketInterface send() +9ms
+jssip.min.js:9 JsSIP:RTCSession session confirmed +1ms
+jssip.min.js:9 JsSIP:RTCSession emit "confirmed" +0ms
+jssip.min.js:9 JsSIP:WebSocketInterface received WebSocket message +5s
+jssip.min.js:9 JsSIP:Transport received text message:BYE sip:rt8d5398@116.58.162.125:60184;transport=ws;ob SIP/2.0
+Via: SIP/2.0/WS 160.16.73.142:8088;rport;branch=z9hG4bKPjf88c1a4b-18bd-4662-8a4b-dcd97c9e965a;alias
+From: <sip:6002@asterisk-dev-kijima.ringing.co.jp>;tag=bc3a2c32-af5a-4827-8554-7f7f21131a78
+To: <sip:6000@asterisk-dev-kijima.ringing.co.jp>;tag=rgdrhc660g
+Call-ID: e3bmj90j4kituvtul3l6
+CSeq: 23490 BYE
+Reason: Q.850;cause=16
+Max-Forwards: 70
+User-Agent: Asterisk PBX 20.6.0~dfsg+~cs6.13.40431414-2build5
+Content-Length:  0
+
+ +5s
+jssip.min.js:9 JsSIP:RTCSession receiveRequest() +5s
+jssip.min.js:9 JsSIP:Transport send() +5ms
+jssip.min.js:9 JsSIP:Transport sending message:SIP/2.0 200 OK
+Via: SIP/2.0/WS 160.16.73.142:8088;rport;branch=z9hG4bKPjf88c1a4b-18bd-4662-8a4b-dcd97c9e965a;alias
+To: <sip:6000@asterisk-dev-kijima.ringing.co.jp>;tag=rgdrhc660g
+From: <sip:6002@asterisk-dev-kijima.ringing.co.jp>;tag=bc3a2c32-af5a-4827-8554-7f7f21131a78
+Call-ID: e3bmj90j4kituvtul3l6
+CSeq: 23490 BYE
+Supported: outbound
+Content-Length: 0
+
+ +0ms
+jssip.min.js:9 JsSIP:WebSocketInterface send() +5ms
+jssip.min.js:9 JsSIP:RTCSession session ended +1ms
+jssip.min.js:9 JsSIP:RTCSession close() +0ms
+jssip.min.js:9 JsSIP:Dialog dialog e3bmj90j4kituvtul3l6rgdrhc660gbc3a2c32-af5a-4827-8554-7f7f21131a78 deleted +5s
+jssip.min.js:9 JsSIP:RTCSession emit "ended" +3ms
+jssip.min.js:9 JsSIP:NonInviteServerTransaction Timer J expired for transaction z9hG4bKPjf88c1a4b-18bd-4662-8a4b-dcd97c9e965a +0ms
+jssip.min.js:9 JsSIP:WebSocketInterface received WebSocket message +7s
+jssip.min.js:9 JsSIP:Transport received text message:
+
+ +7s
+jssip.min.js:9 JsSIP:ERROR:Parser parseMessage() | error parsing first line of SIP message: "" +0ms
+t @ jssip.min.js:9
+(anonymous) @ jssip.min.js:9
+u @ jssip.min.js:9
+value @ jssip.min.js:9
+value @ jssip.min.js:9Understand this warningAI
+jssip.min.js:9 JsSIP:InviteClientTransaction Timer B expired for transaction z9hG4bK3954248 +32s
+jssip.min.js:9 JsSIP:InviteClientTransaction Timer M expired for transaction z9hG4bK3954248 +4s
